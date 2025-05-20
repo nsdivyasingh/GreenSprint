@@ -71,3 +71,29 @@ window.onload = () => {
   toggle.checked = savedTheme === 'dark-mode';
 };
 
+//Streaks display
+function updateStreak() {
+  const today = new Date().toDateString(); // 'Mon May 20 2025'
+  const lastActive = localStorage.getItem('lastActiveDate');
+  let streak = parseInt(localStorage.getItem('streak')) || 0;
+
+  if (lastActive !== today) {
+    if (lastActive) {
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+
+      if (new Date(lastActive).toDateString() === yesterday.toDateString()) {
+        streak += 1;
+      } else {
+        streak = 1; // Reset if missed a day
+      }
+    } else {
+      streak = 1; // First ever entry
+    }
+
+    localStorage.setItem('lastActiveDate', today);
+    localStorage.setItem('streak', streak);
+  }
+
+  document.getElementById('streakDisplay').textContent = `🔥 Streak: ${streak} day${streak !== 1 ? 's' : ''}`;
+}
