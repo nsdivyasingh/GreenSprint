@@ -1,1 +1,27 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background-color: #f0f2ff;
+}
+
+#taskList li.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+#progressContainer {
+  width: 80%;
+  height: 20px;
+  background-color: #ddd;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background-color: #84cc16;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
 
