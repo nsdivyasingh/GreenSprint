@@ -25,3 +25,49 @@ body {
   transition: width 0.4s ease;
 }
 
+/* Toggle Switch */
+.switch {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+.switch input {
+  display: none;
+}
+.slider {
+  width: 50px;
+  height: 25px;
+  background-color: #ccc;
+  border-radius: 34px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+.slider:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 4px;
+  bottom: 2.5px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+input:checked + .slider {
+  background-color: #222;
+}
+
+/* Themes */
+body.light-mode {
+  background-color: #f0f2ff;
+  color: #000;
+}
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
