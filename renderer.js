@@ -9,6 +9,7 @@ function addTask() {
   input.value = '';
   renderTasks();
   updateProgress();
+  updateStreak();
 }
 
 function renderTasks() {
@@ -23,6 +24,7 @@ function renderTasks() {
       tasks[index].completed = !tasks[index].completed;
       renderTasks();
       updateProgress();
+      updateStreak();
     };
     list.appendChild(li);
   });
@@ -97,3 +99,4 @@ function updateStreak() {
 
   document.getElementById('streakDisplay').textContent = `🔥 Streak: ${streak} day${streak !== 1 ? 's' : ''}`;
 }
+updateStreak(); 
