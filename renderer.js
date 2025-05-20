@@ -38,3 +38,36 @@ function updateProgress() {
   const score = total ? Math.round((completed / total) * 10) : 0;
   document.getElementById('scoreDisplay').textContent = `Score: ${score}/10`;
 }
+
+// Theme toggle
+const toggle = document.getElementById('themeToggle');
+const body = document.body;
+
+toggle.addEventListener('change', () => {
+  if (toggle.checked) {
+    body.classList.remove('light-mode');
+    body.classList.add('dark-mode');
+  } else {
+    body.classList.remove('dark-mode');
+    body.classList.add('light-mode');
+  }
+});
+
+// Set default theme
+window.onload = () => {
+  body.classList.add('light-mode'); // or load from localStorage
+};
+
+// Store in localStorage
+toggle.addEventListener('change', () => {
+  const theme = toggle.checked ? 'dark-mode' : 'light-mode';
+  body.className = theme;
+  localStorage.setItem('theme', theme);
+});
+
+window.onload = () => {
+  const savedTheme = localStorage.getItem('theme') || 'light-mode';
+  body.className = savedTheme;
+  toggle.checked = savedTheme === 'dark-mode';
+};
+
