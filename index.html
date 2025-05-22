@@ -1,26 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>GreenSprint</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenSprint 🌱</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-  
-<label class="switch">
-  <input type="checkbox" id="themeToggle">
-  <span class="slider"></span>
-</label>
-
 <body>
-  <h1>GreenSprint 🌱</h1>
-  <input type="text" id="taskInput" placeholder="Add a task..." />
-  <button onclick="addTask()">+</button>
-  <ul id="taskList"></ul>
-  <div id="progressContainer">
-    <div id="progressBar"></div>
+  <div class="main-container">
+    
+    <!-- Left Date Box -->
+    <div class="date-box">
+      <div class="day">Thursday</div>
+      <div class="date-circle">22</div>
+      <div class="month">May</div>
+    </div>
+
+    <!-- Progression Bar -->
+    <div class="progress-bar-container">
+      <div class="progress-bar-text">Progression bar</div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Add Task Area -->
+    <div class="add-task-container">
+      <input type="text" id="taskInput" placeholder="Add task" />
+      <button id="addTaskBtn" onclick="addTask()">+</button>
+    </div>
+
+    <!-- Task List -->
+    <div class="task-list" id="taskList">
+      <div class="task-line">1</div>
+      <div class="task-line">2</div>
+      <div class="task-line">3</div>
+      <div class="task-line">4</div>
+    </div>
+
+    <!-- Finish Day Button -->
+    <button class="finish-day-btn">Finish Day</button>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider"></span>
+        <span class="visually-hidden">Toggle theme</span>
+      </label>
+    </div>
+    
   </div>
-  <p id="streakDisplay">🔥 Streak: 0 days</p>
-  <p id="scoreDisplay"></p>
+
   <script src="renderer.js"></script>
 </body>
 </html>
-
