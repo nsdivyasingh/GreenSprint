@@ -1,10 +1,24 @@
 {
-  "name": "greensprint",
+  "name": "greenbrute",
+  "version": "1.0.0",
+  "description": "Neo-brutalist productivity app with streaks and progress",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
+  "keywords": [
+    "productivity",
+    "electron",
+    "neo-brutalism",
+    "streaks"
+  ],
+  "author": "NS Divya Singh",
+  "license": "MIT",
+  "dependencies": {
+    "electron-store": "^9.0.0",
+    "date-fns": "^3.0.0"
+  },
   "devDependencies": {
-    "electron": "^latest"
+    "electron": "^29.1.0"
   }
 }
