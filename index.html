@@ -10,36 +10,39 @@
   <div class="main-container">
     
     <!-- Left Date Box -->
-    <div class="date-box">
-      <div class="day">Thursday</div>
-      <div class="date-circle">22</div>
-      <div class="month">May</div>
-    </div>
+    <div class="date-container">
+  <div class="day-name" id="dayName">Day</div>
+  <div class="day-number" id="dayNumber">00</div>
+  <div class="month-name" id="monthName">Month</div>
+</div>
 
     <!-- Progression Bar -->
     <div class="progress-bar-container">
-      <div class="progress-bar-text">Progression bar</div>
+      <div class="progress-bar-text">Daily Progress</div>
       <div class="progress-bar">
-        <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+        <div class="progress-fill" id="progressFill"></div>
       </div>
     </div>
 
-    <!-- Add Task Area -->
-    <div class="add-task-container">
-      <input type="text" id="taskInput" placeholder="Add task" />
-      <button id="addTaskBtn" onclick="addTask()">+</button>
-    </div>
+    <!-- Task Section -->
+<div class="task-section">
 
-    <!-- Task List -->
-    <div class="task-list" id="taskList">
-      <div class="task-line">1</div>
-      <div class="task-line">2</div>
-      <div class="task-line">3</div>
-      <div class="task-line">4</div>
-    </div>
+  <!-- Add Task Area -->
+  <div class="add-task-container">
+    <input type="text" id="taskInput" placeholder="✏️ Add a new task" aria-label="Add a new task" />
+    <button id="addTaskBtn" onclick="addTask()" aria-label="Add task">+</button>
+  </div>
+
+  <!-- Task Container -->
+  <div class="task-container">
+    <ul class="task-items" id="taskList"></ul>
+  </div>
+
+</div>
+  
 
     <!-- Finish Day Button -->
-    <button class="finish-day-btn">Finish Day</button>
+    <button class="finish-day-btn" onclick="finishDay()">Finish Day</button>
 
     <!-- Theme Toggle -->
     <div class="theme-toggle">
@@ -49,7 +52,7 @@
         <span class="visually-hidden">Toggle theme</span>
       </label>
     </div>
-    
+
   </div>
 
   <script src="renderer.js"></script>
