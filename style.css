@@ -1,4 +1,4 @@
-/* Reset & Global Styles */
+/* Global Reset & Base Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,128 +7,246 @@
 }
 
 body {
-  background-color: #ffffff;
+  background: linear-gradient(to right, #e8f5e9, #e3f2fd);
   padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  transition: background-color 0.4s ease;
 }
 
-/* Container */
+/* Main Container */
 .main-container {
   width: 90%;
   max-width: 700px;
-  border: 1px solid #ccc;
+  background-color: #b4bcac;
   border-radius: 20px;
-  padding: 20px;
+  padding: 25px 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   position: relative;
 }
 
 /* Date Box */
-.date-box {
-  border: 1px solid #000;
-  border-radius: 10px;
-  width: 100px;
+.date-container {
+  border: 2px solid #729262;         
+  border-radius: 15px;                
+  width: 120px;  
+  height: 120px;                    
   text-align: center;
-  padding: 10px;
+  padding: 12px 10px;
+  background-color: #74846c;         
   float: left;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 
-.date-box .day {
+.day-name {
   font-weight: bold;
+  font-size: 1rem;
+  color: #b4bcac;                  
+  margin-bottom: 5px;
+  text-transform: uppercase;         
 }
 
-.date-box .date-circle {
-  border: 1px solid black;
+.day-number {
+  border: 2px solid #6c846c;         
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  margin: 10px auto;
-  font-size: 18px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;                 
+  margin: 0 auto 10px auto;          
+  font-size: 24px;
+  background-color: #b4bcac;        
+  color: #252e20;                   
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
 }
 
-.date-box .month {
-  font-size: 14px;
+.month-name {
+  font-size: 0.9rem;
+  color: #b4bcac;                   
+  text-transform: capitalize;
 }
 
 /* Progression Bar */
 .progress-bar-container {
-  margin-left: 120px;
+  margin-left: 150px;
   margin-bottom: 20px;
 }
 
 .progress-bar-text {
-  border: 1px solid #000;
-  border-radius: 15px;
-  padding: 10px;
-  text-align: center;
-  margin-bottom: 10px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #6c846c;
 }
 
 .progress-bar {
-  width: 100%;
-  height: 10px;
+  width: 90%;
+  height: 12px;
   background-color: #e0e0e0;
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
-  background-color: #00c853;
-  transition: width 0.3s ease-in-out;
+  width: 0%;
+  background-color: #7c9464;
+  transition: width 0.4s ease-in-out;
 }
 
 /* Add Task Section */
 .add-task-container {
   display: flex;
   gap: 10px;
-  margin: 20px 0;
+  margin: 25px 25px;
 }
 
 #taskInput {
   flex: 1;
-  padding: 10px;
-  border: 1px solid black;
+  padding: 12px;
+  border: 2px solid #252e20;
   border-radius: 15px;
+  font-size: 16px;
+  background-color: #a8b69f;
+  transition: 0.3s ease;
+  margin-left: 10px;
+}
+
+#taskInput:focus {
+  outline: none;
+  border-color: #252e20;
+  box-shadow: 0 0 6px #7c9464;
+}
+
+.task-section {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.task-container {
+  background-color: #6c846c;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #7c9464;
+  margin-top: 10px;
+}
+
+.task-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-items li {
+  background: #74846c;
+  border: 1px solid #7c9464;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.task-items li.completed {
+  text-decoration: line-through;
+  color: #aaa;
 }
 
 #addTaskBtn {
-  padding: 0 15px;
-  font-size: 20px;
-  border: 1px solid black;
-  border-radius: 10px;
-  background-color: white;
+  padding: 0 18px;
+  font-size: 22px;
+  border: none;
+  border-radius: 12px;
+  background-color: #729262;
+  color: white;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
+
+#addTaskBtn:hover {
+  background-color: #cbdbbb;
+}
+
+.task-box {
+  display: flex;
+  align-items: center;
+  border: 2px solid #d5f5d0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 1rem;
+}
+
+.task-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  flex: 1;
+  padding-left: 8px;
+  color: #333;
+}
+
+.task-box input::placeholder {
+  color: #aaa;
+}
+
 
 /* Task List */
 .task-list {
-  border: 1px solid black;
+  border: 2px solid #a5d6a7;
   border-radius: 15px;
   padding: 15px;
-  min-height: 120px;
+  background-color: #f1f8e9;
+  min-height: 140px;
   margin-bottom: 20px;
 }
 
+.task-items {
+  list-style-type: none;
+  padding-left: 0;
+}
+
 .task-line {
-  margin: 5px 0;
+  padding: 10px 14px;
+  margin: 8px 0;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
   font-size: 16px;
+}
+
+.task-line:hover {
+  background-color: #e6ee9c;
+  cursor: pointer;
 }
 
 /* Finish Day Button */
 .finish-day-btn {
   display: block;
-  margin: 0 auto;
-  padding: 10px 20px;
-  border: 1px solid black;
-  border-radius: 15px;
-  background-color: white;
-  cursor: pointer;
+  margin: 0 auto 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  background-color: #729262;
+  color: white;
   font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.finish-day-btn:hover {
+  background-color: #729262;
 }
 
 /* Theme Toggle */
@@ -141,8 +259,8 @@ body {
 .switch {
   position: relative;
   display: inline-block;
-  width: 40px;
-  height: 20px;
+  width: 44px;
+  height: 22px;
 }
 
 .switch input {
@@ -153,21 +271,19 @@ body {
 
 .slider {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: grey;
-  border-radius: 20px;
   cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
   transition: 0.4s;
+  border-radius: 20px;
 }
 
 .slider:before {
-  content: "";
   position: absolute;
-  height: 14px;
-  width: 14px;
+  content: "";
+  height: 16px;
+  width: 16px;
   left: 3px;
   bottom: 3px;
   background-color: white;
@@ -180,7 +296,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(20px);
+  transform: translateX(22px);
 }
 
 .visually-hidden {
