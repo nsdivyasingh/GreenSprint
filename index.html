@@ -5,10 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GreenSprint 🌱</title>
   <link rel="stylesheet" href="style.css"/>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
 </head>
+
 <body>
+  
+
   <div class="main-container">
-    
+
+    <header class="app-header">
+  <h1 class="app-title">GreenSprint <span class="tagline">– "Grow daily, win deeply."</span></h1>
+  </header>
     <!-- Left Date Box -->
     <div class="date-container">
   <div class="day-name" id="dayName">Day</div>
@@ -37,23 +44,32 @@
   <div class="task-container">
     <ul class="task-items" id="taskList"></ul>
   </div>
-
 </div>
   
-
     <!-- Finish Day Button -->
     <button class="finish-day-btn" onclick="finishDay()">Finish Day</button>
 
-    <!-- Theme Toggle -->
-    <div class="theme-toggle">
-      <label class="switch">
-        <input type="checkbox" id="themeToggle">
-        <span class="slider"></span>
-        <span class="visually-hidden">Toggle theme</span>
-      </label>
-    </div>
-
   </div>
+
+  <div id="growthModal" class="hidden">
+  <div class="growth-content">
+    
+    <!-- 🌱 Lottie Animation -->
+    <dotlottie-player
+      id="treeAnimation"
+      src="animations/Animation - 1748174025104.lottie"
+      background="transparent"
+      speed="1"
+      style="width: 200px; height: 200px;"
+      autoplay
+    ></dotlottie-player>
+
+
+    <p class="growth-message">Keep Growing!</p>
+    
+  </div>
+</div>
+
 
   <script src="renderer.js"></script>
 </body>
