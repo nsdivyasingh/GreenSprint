@@ -20,7 +20,6 @@ function updateDate() {
 // Call once on load
 updateDate();
 
-
 // Load tasks from localStorage
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 renderTasks();
@@ -69,7 +68,6 @@ taskInput.addEventListener('keypress', function (e) {
   }
 });
 
-
 // Toggle task completion
 function toggleComplete(index) {
   tasks[index].completed = !tasks[index].completed;
@@ -104,3 +102,26 @@ function finishDay() {
     renderTasks();
   }
 }
+
+function finishDay() {
+  const allCompleted = tasks.length > 0 && tasks.every(t => t.completed);
+
+  if (allCompleted) {
+    // Show the growth modal
+    const modal = document.getElementById("growthModal");
+    modal.classList.remove("hidden");
+
+    // Reset tasks
+    tasks = [];
+    saveTasks();
+    renderTasks();
+
+    // ⏱️ Auto-hide after 5 seconds
+    setTimeout(() => {
+      modal.classList.add("hidden");
+    }, 5000); // 5000ms = 5 seconds
+  } else {
+    alert("Finish all your tasks to grow your tree!");
+  }
+}
+
